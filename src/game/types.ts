@@ -21,6 +21,7 @@ export interface Field {
   x: number;
   y: number;
   tiles: number;
+  locked?: boolean;
 }
 
 export interface Mission {

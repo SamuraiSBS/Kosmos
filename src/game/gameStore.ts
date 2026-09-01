@@ -4,8 +4,8 @@ import { GameStore, FieldState } from './types';
 
 const INITIAL_FIELDS = [
   { id: 'field-a', name: 'Северное поле', state: 'critical' as FieldState, x: 5, y: 3, tiles: 16 },
-  { id: 'field-b', name: 'Западное поле', state: 'healthy' as FieldState, x: 2, y: 7, tiles: 16 },
-  { id: 'field-c', name: 'Восточное поле', state: 'healthy' as FieldState, x: 8, y: 7, tiles: 16 },
+  { id: 'field-b', name: 'Западное поле', state: 'healthy' as FieldState, x: 2, y: 7, tiles: 16, locked: true },
+  { id: 'field-c', name: 'Восточное поле', state: 'healthy' as FieldState, x: 8, y: 7, tiles: 16, locked: true },
 ];
 
 const INITIAL_MISSIONS = [

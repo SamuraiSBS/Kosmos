@@ -1,22 +1,22 @@
 ```
+# Build artifacts
+dist/
+build/
+
 # Dependencies
 node_modules/
 
-# Build outputs
-dist/
-build/
-target/
-
-# Environment variables
+# Environment
 .env
 .env.local
 .env.*
 
-# IDE files
+# Editor/IDE
 .vscode/
 .idea/
 *.swp
 *.swo
+*.tmp
 
 # Logs
 *.log
@@ -27,34 +27,17 @@ __pycache__/
 *.pyo
 *.pyd
 .Python
+env/
 venv/
 .venv/
-.env
-
-# Temporary files
-*.tmp
-*.temp
-*~
-
-# OS generated files
-.DS_Store
-Thumbs.db
-
-# Coverage reports
-coverage/
-htmlcov/
-.coverage
-
-# TypeScript/JavaScript
-*.tsbuildinfo
-.nyc_output
-
-# General build artifacts
-*.o
-*.obj
-*.exe
-*.dll
+.ENV
+pip-log.txt
+pip-delete-this-directory.txt
 *.so
-*.a
-*.out
+.Python
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+coverage/
 ```
