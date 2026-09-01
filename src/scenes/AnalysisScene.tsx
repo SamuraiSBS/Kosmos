@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useGameStore } from '../game/gameStore';
-import { satelliteService } from '../game/mockSatelliteData';
+import { satelliteService } from '../services/satelliteService';
 import { useState, useEffect } from 'react';
 
 interface AnalysisSceneProps {

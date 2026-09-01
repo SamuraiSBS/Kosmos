@@ -136,7 +136,7 @@ export const MapScene: React.FC<MapSceneProps> = ({ onFieldSelect }) => {
         }} />
         
         {/* Fields */}
-        {fields.map((field) => (
+        {fields.map((field: any) => (
           <Field
             key={field.id}
             field={field}

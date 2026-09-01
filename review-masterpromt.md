@@ -4,22 +4,25 @@
 
 ### КРИТИЧЕСКИЕ (Blocking)
 
-#### 1. TypeScript ошибки сборки
-```
+#### ~~1. TypeScript ошибки сборки~~ ✅ ИСПРАВЛЕНО
+~~```
 src/main.tsx:4 - Cannot find module or type declarations for './styles/global.css'
 src/scenes/MapScene.tsx:139 - Parameter 'field' implicitly has an 'any' type
-```
-**Статус:** Не проходит production build
+```~~
+~~**Статус:** Не проходит production build~~
+**Статус:** ✅ Исправлено - добавлен vite-env.d.ts для CSS modules и явная типизация параметра `field`
 
-#### 2. Отсутствует `services/satelliteService.ts`
-- В Master Prompt (пункт 1.39) требуется отдельный service layer в папке `services/`
-- Сейчас `satelliteService` находится в `mockSatelliteData.ts`
-- UI импортирует напрямую из `mockSatelliteData.ts` вместо service layer
+#### ~~2. Отсутствует `services/satelliteService.ts`~~ ✅ ИСПРАВЛЕНО
+- ~~В Master Prompt (пункт 1.39) требуется отдельный service layer в папке `services/`~~
+- ~~Сейчас `satelliteService` находится в `mockSatelliteData.ts`~~
+- ~~UI импортирует напрямую из `mockSatelliteData.ts` вместо service layer~~
+**Статус:** ✅ Исправлено - создан `src/services/satelliteService.ts`, обновлены все импорты в AnalysisScene и DecisionScene
 
-#### 3. Проблема в App.tsx с SpaceScene
-- В `App.tsx` нет обработки состояния `'LOADING'` для показа `SpaceScene`
-- SpaceScene существует, но не интегрирована в основной flow правильно
-- При загрузке сразу переход к INTRO без космической сцены
+#### ~~3. Проблема в App.tsx с SpaceScene~~ ✅ ИСПРАВЛЕНО
+- ~~В `App.tsx` нет обработки состояния `'LOADING'` для показа `SpaceScene`~~
+- ~~SpaceScene существует, но не интегрирована в основной flow правильно~~
+- ~~При загрузке сразу переход к INTRO без космической сцены~~
+**Статус:** ✅ Исправлено - добавлено состояние `SPACE` в GameState, интегрирована последовательность: LOADING → SPACE → INTRO → MAP
 
 ### СРЕДНИЕ (Important)
 

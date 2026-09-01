@@ -2,18 +2,59 @@
 # Dependencies
 node_modules/
 
-# Environment
+# Build outputs
+dist/
+build/
+target/
+
+# Environment variables
 .env
 .env.local
 .env.*
 
-# Logs and temp files
-*.log
-*.tmp
-
-# Editors
+# IDE files
 .vscode/
+.idea/
+*.swp
+*.swo
 
-# Original rules preserved
+# Logs
 *.log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+.venv/
+.env
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Coverage reports
+coverage/
+htmlcov/
+.coverage
+
+# TypeScript/JavaScript
+*.tsbuildinfo
+.nyc_output
+
+# General build artifacts
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+*.out
 ```

@@ -1,5 +1,6 @@
 export type GameState = 
   | 'LOADING'
+  | 'SPACE'
   | 'INTRO'
   | 'MAP'
   | 'MISSION'

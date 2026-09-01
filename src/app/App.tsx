@@ -43,12 +43,12 @@ function App() {
     return () => clearTimeout(timer);
   }, [introCompleted, setGameState]);
   
-  const handleSpaceComplete = () => {
-    setGameState('INTRO');
+  const handleIntroComplete = () => {
+    setGameState('SPACE');
   };
   
-  const handleIntroComplete = () => {
-    setGameState('MAP');
+  const handleSpaceComplete = () => {
+    setGameState('INTRO');
   };
   
   const handleFieldSelect = (fieldId: string) => {
@@ -120,12 +120,7 @@ function App() {
   const renderScene = () => {
     switch (gameState) {
       case 'LOADING':
-        return (
-          <div className="loading-screen">
-            <div className="loading-spinner" />
-            <div style={{ fontSize: 12 }}>Загрузка...</div>
-          </div>
-        );
+        return <SpaceScene onComplete={handleSpaceComplete} />;
         
       case 'INTRO':
         return <IntroScene onComplete={handleIntroComplete} />;
