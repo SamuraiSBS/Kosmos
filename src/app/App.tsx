@@ -7,6 +7,7 @@ import { AnalysisScene } from '../scenes/AnalysisScene';
 import { DecisionScene } from '../scenes/DecisionScene';
 import { ResultScene } from '../scenes/ResultScene';
 import { DebugPanel } from '../components/DebugPanel/DebugPanel';
+import { BottomSheet } from '../components/BottomSheet/BottomSheet';
 
 function App() {
   const [isDebugMode, setIsDebugMode] = useState(false);
@@ -133,34 +134,22 @@ function App() {
         return (
           <>
             <MapScene onFieldSelect={handleFieldSelect} />
-            {/* Bottom sheet would go here - simplified for MVP */}
-            <div style={{
-              position: 'absolute',
-              bottom: 80,
-              left: 12,
-              right: 12,
-              background: '#fef3c7',
-              color: '#1e293b',
-              padding: 16,
-              borderRadius: 8,
-              border: '3px solid #1e293b',
-              zIndex: 200,
-            }}>
-              <h3 style={{ fontSize: 12, marginBottom: 8 }}>
-                ⚠ Аномалия обнаружена
-              </h3>
-              <p style={{ fontSize: 9, marginBottom: 12, lineHeight: 1.4 }}>
-                Спутниковые данные показывают проблему на этом участке.
-                Необходим срочный анализ.
-              </p>
-              <button 
-                className="game-button"
-                style={{ width: '100%' }}
-                onClick={handleMissionContinue}
-              >
-                Провести анализ
-              </button>
-            </div>
+            <BottomSheet
+              isOpen={true}
+              title="⚠ Аномалия обнаружена"
+              footer={
+                <button 
+                  className="game-button"
+                  style={{ width: '100%' }}
+                  onClick={handleMissionContinue}
+                >
+                  Провести анализ
+                </button>
+              }
+            >
+              Спутниковые данные показывают проблему на этом участке.
+              Необходим срочный анализ.
+            </BottomSheet>
           </>
         );
         
