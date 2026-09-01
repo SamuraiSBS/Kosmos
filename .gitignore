@@ -2,6 +2,8 @@
 # Build artifacts
 dist/
 build/
+*.css
+*.js
 
 # Dependencies
 node_modules/
@@ -9,35 +11,19 @@ node_modules/
 # Environment
 .env
 .env.local
-.env.*
+*.env.*
 
-# Editor/IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*.tmp
-
-# Logs
-*.log
-
-# Python
+# Cache and temporary files
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
-.Python
-env/
-venv/
-.venv/
-.ENV
-pip-log.txt
-pip-delete-this-directory.txt
-*.so
-.Python
-.pytest_cache/
-.mypy_cache/
-.coverage
-htmlcov/
-coverage/
+*.tmp
+*.log
+
+# Editors
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
 ```

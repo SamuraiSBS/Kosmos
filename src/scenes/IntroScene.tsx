@@ -15,7 +15,7 @@ export const IntroScene: React.FC<IntroSceneProps> = ({ onComplete }) => {
   };
   
   return (
-    <div className="map-scene">
+    <div className="intro-overlay">
       {/* NPC container */}
       <motion.div
         className="npc-container"

@@ -94,11 +94,11 @@ function App() {
   
   const handleResultContinue = () => {
     if (correctDecision) {
-      // Return to map
+      // Return to map after correct decision
       selectField(null);
       setGameState('MAP');
     } else {
-      // Go back to decision
+      // Go back to decision to try again
       setGameState('DECISION');
     }
   };
@@ -124,13 +124,18 @@ function App() {
         return <SpaceScene onComplete={handleSpaceComplete} />;
         
       case 'INTRO':
-        return <IntroScene onComplete={handleIntroComplete} />;
+        return (
+          <>
+            <MapScene onFieldSelect={handleFieldSelect} />
+            <IntroScene onComplete={handleIntroComplete} />
+          </>
+        );
         
       case 'MAP':
         return <MapScene onFieldSelect={handleFieldSelect} />;
         
       case 'MISSION':
-        // Show bottom sheet with mission info
+        // Show bottom sheet with mission info over the map
         return (
           <>
             <MapScene onFieldSelect={handleFieldSelect} />
