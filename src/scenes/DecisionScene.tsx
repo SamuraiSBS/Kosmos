@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useGameStore } from '../game/gameStore';
-import { mockSatelliteData } from '../game/mockSatelliteData';
-import { useState } from 'react';
+import { satelliteService } from '../services/satelliteService';
+import { useState, useEffect } from 'react';
 
 interface DecisionSceneProps {
   fieldId: string;
@@ -21,7 +21,20 @@ export const DecisionScene: React.FC<DecisionSceneProps> = ({
   onDecisionMade,
 }) => {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
-  const correctSolution = mockSatelliteData[fieldId]?.solution;
+  const [solution, setSolution] = useState<string>('');
+  
+  useEffect(() => {
+    const loadSolution = async () => {
+      try {
+        const data = await satelliteService.getFieldAnalysis(fieldId);
+        setSolution(data.solution);
+      } catch (error) {
+        console.error('Failed to load solution:', error);
+      }
+    };
+    
+    loadSolution();
+  }, [fieldId]);
   
   const handleSelect = (optionId: string) => {
     setSelectedOption(optionId);
