@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/main.tsx","./src/components/BottomSheet/BottomSheet.tsx","./src/components/GameAsset/GameAsset.tsx","./src/game/assetRegistry.ts","./src/game/gameStore.ts","./src/game/missions.ts","./src/game/mockSatelliteData.ts","./src/scenes/SpaceScene.tsx","./src/services/satelliteService.ts"],"errors":true,"version":"5.9.3"}
