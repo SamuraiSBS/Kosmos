@@ -1,0 +1,174 @@
+.space-scene {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+  overflow: hidden;
+  z-index: 100;
+}
+
+/* Stars */
+.stars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: twinkle 2s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* Earth */
+.earth {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 60px rgba(100, 200, 255, 0.3);
+}
+
+.earth-surface {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1e88e5 0%, #42a5f5 30%, #66bb6a 50%, #8d6e63 70%, #1e88e5 100%);
+  border-radius: 50%;
+}
+
+/* Clouds */
+.clouds-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.cloud {
+  position: absolute;
+  width: 80px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  filter: blur(8px);
+  animation: drift 8s infinite linear;
+}
+
+@keyframes drift {
+  0% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(calc(100vw + 100px));
+  }
+}
+
+/* Satellite placeholder */
+.satellite {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 60px;
+  height: 60px;
+}
+
+.satellite-body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: #90a4ae;
+  border: 2px solid #546e7a;
+  border-radius: 4px;
+}
+
+.satellite-panel-left,
+.satellite-panel-right {
+  position: absolute;
+  top: 50%;
+  width: 25px;
+  height: 15px;
+  background-color: #1565c0;
+  border: 2px solid #0d47a1;
+  transform: translateY(-50%);
+}
+
+.satellite-panel-left {
+  left: 5px;
+}
+
+.satellite-panel-right {
+  right: 5px;
+}
+
+/* Skip button */
+.skip-button {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: rgba(66, 153, 225, 0.9);
+  border: 3px solid #4299e1;
+  border-radius: 8px;
+  cursor: pointer;
+  min-width: 140px;
+  min-height: 48px;
+  transition: all 0.2s;
+}
+
+.skip-button:hover {
+  background-color: #4299e1;
+  transform: translateX(-50%) scale(1.05);
+}
+
+/* Transition overlay */
+.transition-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #4fc3f7;
+  pointer-events: none;
+}
+
+@media (max-width: 390px) {
+  .earth {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .skip-button {
+    bottom: 80px;
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+}
