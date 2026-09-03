@@ -1,0 +1,96 @@
+.game-asset {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  image-rendering: pixelated;
+  cursor: pointer;
+  user-select: none;
+}
+
+.game-asset-placeholder {
+  background-color: #4a5568;
+  color: #fff;
+  border: 2px solid #2d3748;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 2px;
+}
+
+.game-asset-image {
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.game-asset-missing {
+  background-color: #e53e3e;
+  color: #fff;
+  border: 2px dashed #c53030;
+}
+
+/* Asset-specific placeholder styles */
+.game-asset[data-asset="player"] {
+  background-color: #4299e1;
+}
+
+.game-asset[data-asset="npcHelper"] {
+  background-color: #ed8936;
+}
+
+.game-asset[data-asset="farmHouse"] {
+  background-color: #9f7aea;
+}
+
+.game-asset[data-asset="satelliteStation"] {
+  background-color: #63b3ed;
+}
+
+.game-asset[data-asset="tree"] {
+  background-color: #48bb78;
+  border-radius: 50%;
+}
+
+.game-asset[data-asset="fieldHealthy"],
+.game-asset[data-asset="field-healthy"] {
+  background-color: #48bb78;
+}
+
+.game-asset[data-asset="fieldWarning"],
+.game-asset[data-asset="field-warning"] {
+  background-color: #ecc94b;
+  animation: pulse-warning 2s infinite;
+}
+
+.game-asset[data-asset="fieldCritical"],
+.game-asset[data-asset="field-critical"] {
+  background-color: #ed8936;
+  animation: pulse-critical 1.5s infinite;
+}
+
+.game-asset[data-asset="fieldResolved"],
+.game-asset[data-asset="field-resolved"] {
+  background-color: #38a169;
+}
+
+@keyframes pulse-warning {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes pulse-critical {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
